@@ -4,3 +4,12 @@
 .wcw-d-block{
     display: block;
 }
+.tip{
+    font-style: italic;
+}
+.form-group{
+    margin-bottom:20px;
+}
+#delay_field{
+    display:none;
+}

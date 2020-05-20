@@ -16,7 +16,7 @@ define('WCW_ROUTE', plugin_dir_path(__FILE__));
 include(WCW_ROUTE . '/includes/options.php');
 
 
-if (get_option('wcw_mobile_number') ) {
+if (get_option('wcw_mobile_number') && strlen(get_option('wcw_mobile_number')) > 0 ) {
     function hook_add_widget() {
         wp_enqueue_script( 'custom_wcw_script', plugins_url( '/assets/js/whatsappChat.js', __FILE__ ));
         

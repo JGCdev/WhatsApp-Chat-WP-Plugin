@@ -25,7 +25,7 @@ jQuery(document).ready(function($){
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 			window.open("https://api.whatsapp.com/send?phone="+ php_vars.number + "&text=" + texto);
 		}else{
-			window.open("https://web.whatsapp.com/send?phone=34" + php_vars.number +"&text=" + texto);
+			window.open("https://web.whatsapp.com/send?phone=" + php_vars.number +"&text=" + texto);
 		}
 	});
 
