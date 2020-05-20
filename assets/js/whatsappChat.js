@@ -18,8 +18,6 @@ jQuery(document).ready(function($){
 			'</div>' +
 		'</div>'
 	);
-
-	console.log('phone: ', php_vars.number);
 	
 
 	$('#buttonChat').click(function(e) {  
