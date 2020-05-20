@@ -14,7 +14,6 @@ defined('ABSPATH') or die("Not Allowed!");
 define('WCW_ROUTE', plugin_dir_path(__FILE__));
 
 include(WCW_ROUTE . '/includes/options.php');
-include(WCW_ROUTE . '/includes/functions.php');
 
 
 
