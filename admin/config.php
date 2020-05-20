@@ -28,7 +28,7 @@
     }
 
     // Cogemos el valor del options y si no existe colocamos el string para operar
-    $number = get_option('wcw_mobile_number', 'Set your whatsapp number');
+    $number = get_option('wcw_mobile_number', '+34666777888');
     $delay = get_option('wcw_delay', 20);
     $text1 = get_option('wcw_text1', '¿Cómo puedo ayudarte?');
     $text2 = get_option('wcw_text2', 'Estoy para ayudarte en lo que necesites. ¡Pregúnta lo que quieras!');
@@ -37,7 +37,7 @@
     $incorrectPhone = false;
 
     // Disparador para mostrar mensaje si no tenemos configurado el teléfono
-    if ($number == 'Set your whatsapp number' || strlen($number) < 3) { ?>
+    if ($number == '+34666777888' || strlen($number) < 3) { ?>
         <div class="update-nag notice wcw-d-block">
             <p>Rellena tu número de teléfono para activar el funcionamiento del plugin</p>
         </div>
