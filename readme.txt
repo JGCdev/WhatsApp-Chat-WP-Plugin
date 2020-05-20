@@ -1,10 +1,10 @@
 === Simple Chat Box WP ===
 
 Contributors: jesusgimenez
-Tags: wp, whatsapp, chat, simple, intuitive, chatbox, responsive, compact, minimalist
+Tags: wp, whatsapp, chat, simple, intuitive, chatbox, bot, chatbot, responsive, compact, minimalist
 Requires at least: 4.7
 Tested up to: 5.4.1
-Stable tag: 4.3 ·····
+Stable tag: 4.3
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
