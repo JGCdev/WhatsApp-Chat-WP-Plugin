@@ -8,17 +8,17 @@
         isset($_POST['wcw_text2']) &&
         isset($_POST['wcw_text3']) 
         ) {
-        $number = $_POST['wcw_mobile_number'];
+        $number = sanitize_text_field($_POST['wcw_mobile_number']);
         update_option('wcw_mobile_number', $number);
-        $autoOpen = $_POST['wcw_opening'];
+        $autoOpen = sanitize_text_field($_POST['wcw_opening']);
         update_option('wcw_opening', $autoOpen);
-        $delay = $_POST['wcw_delay'];
+        $delay = sanitize_text_field($_POST['wcw_delay']);
         update_option('wcw_delay', $delay);
-        $text1 = $_POST['wcw_text1'];
+        $text1 = sanitize_text_field($_POST['wcw_text1']);
         update_option('wcw_text1', $text1);
-        $text2 = $_POST['wcw_text2'];
+        $text2 = sanitize_text_field($_POST['wcw_text2']);
         update_option('wcw_text2', $text2);
-        $text3 = $_POST['wcw_text3'];
+        $text3 = sanitize_text_field($_POST['wcw_text3']);
         update_option('wcw_text3', $text3);
     }
 

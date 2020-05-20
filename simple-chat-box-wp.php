@@ -1,12 +1,13 @@
 <?php
 
 /**
- * Plugin Name: WhatsApp Chat WP
- * Plugin URI: http://www.jesusgimenez.com/whatsapp-chat-wp
- * Description: Simple plugin to allow users chat vía whatsapp web or mobile
+ * Plugin Name: Simple Chat Box WP
+ * Plugin URI: https://www.jesusgimenez.com/proyectos-web/
+ * Description: WhatsApp chat auto-installable on any page
  * Version: 1.0
  * Author: Jesús Giménez
  * Author URI: http://www.jesusgimenez.com
+ * Text Domain: wcw_plugin
  */
 
 defined('ABSPATH') or die("Not Allowed!");

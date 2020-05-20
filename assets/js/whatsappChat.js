@@ -1,8 +1,6 @@
 
 jQuery(document).ready(function($){
 
-	console.log('php vars', php_vars);
-
 	$("body").append(
 		'<div class="caja-popup">' +
 			'<div class="caja-popup-1" id="popup-oculto">' +

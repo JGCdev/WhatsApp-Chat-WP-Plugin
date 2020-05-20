@@ -4,14 +4,6 @@
 .wcw-d-block{
     display: block;
 }
-.tip{
-    font-style: italic;
-    margin-top: 5px;
-    color: red;
-}
-.form-group{
-    margin-bottom:20px;
-}
 #delay_field{
     display:none;
 }
