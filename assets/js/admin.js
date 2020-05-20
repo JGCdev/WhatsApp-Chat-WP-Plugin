@@ -1,16 +1,14 @@
 
 jQuery(document).ready(function($){
 
-    if (document.getElementById('wcw_opening').checked=== true) {
-        $("#delay_field")[ "show"]();
-        document.getElementById('wcw_opening').value = true;
+    if (document.getElementById('wcw_opening').checked ) {
+        $("#delay_field")["show"]();
+    } else {
+        $("#delay_field")["hide"]();
     }
 
-	$("#wcw_opening").click(function() {
+	$("#wcw_opening").change(function() {
         $("#delay_field")[this.checked ? "show" : "hide"]();
-        var checkedValue = this.checked;
-        this.value = checkedValue;
-        console.log(checkedValue);
-        
+        this.checked === true ? this.value = 1 : this.value = 0;
 	});
 });
