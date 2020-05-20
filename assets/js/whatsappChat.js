@@ -1,22 +1,20 @@
 
 jQuery(document).ready(function($){
 
-	console.log('php vars', php_vars);
-
 	$("body").append(
 		'<div class="caja-popup">' +
 			'<div class="caja-popup-1" id="popup-oculto">' +
 				'<div class="caja-popup-abierto">' +
-					'<div class="popup-abierto-1">Estoy para ayudarte en lo que necesites. ¡Pregúnta lo que quieras!</div>' +
-					'<div class="popup-abierto-2">Hola, ¿Qué tal?</div>' +
+					'<div class="popup-abierto-1">' + php_vars.text2 + '</div>' +
+					'<div class="popup-abierto-2">' + php_vars.text3 + '</div>' +
 				'</div>' +
 				'<div class="caja-input">' +
 					'<input type="text" class="input-chat" id="inputChat" placeholder="Escribe tu mensaje...">' +
-					'<img class="enviar-chat" id="buttonChat" src="wp-content/plugins/whatsapp-chat-wp/assets/img/send-button.svg" >' +
+					'<img class="enviar-chat" id="buttonChat" src="wp-content/plugins/simple-chat-box-wp/assets/img/send-button.svg" >' +
 				'</div>' +
 			'</div>' +
 			'<div class="caja-popup-2" id="abrir-popup-oculto">' +
-				'<div class="popup-cerrado"><img class="whatsapp-icon" src="wp-content/plugins/whatsapp-chat-wp/assets/img/whatsapp.svg" > ¿Cómo puedo ayudarte?</div>' +
+				'<div class="popup-cerrado"><img class="whatsapp-icon" src="wp-content/plugins/simple-chat-box-wp/assets/img/whatsapp.svg" >' + php_vars.text1 + '</div>' +
 			'</div>' +
 		'</div>'
 	);
@@ -38,7 +36,7 @@ jQuery(document).ready(function($){
 		*/
 		function(e){ 
 			$('#popup-oculto').slideDown();
-			$(this).html('<div style="clear:both;padding-top:15px;"></div><div class="popup-cerrado-cruz"><img class="close-icon" src="wp-content/plugins/whatsapp-chat-wp/assets/img/close.svg" > </div>');
+			$(this).html('<div style="clear:both;padding-top:15px;"></div><div class="popup-cerrado-cruz"><img class="close-icon" src="wp-content/plugins/simple-chat-box-wp/assets/img/close.svg" > </div>');
 			e.preventDefault();
 		},
 	 
@@ -48,18 +46,21 @@ jQuery(document).ready(function($){
 		*/
 		function(e){ 
 			$('#popup-oculto').slideUp();
-			$(this).html('<div class="popup-cerrado"><img class="whatsapp-icon" src="wp-content/plugins/whatsapp-chat-wp/assets/img/whatsapp.svg" > ¿Cómo puedo ayudarte?</div>');
+			$(this).html('<div class="popup-cerrado"><img class="whatsapp-icon" src="wp-content/plugins/simple-chat-box-wp/assets/img/whatsapp.svg" > ' + php_vars.text1 + '</div>');
 			e.preventDefault();
 		}
  
 	);
  
 	// Timeout para lanzar automáticamente el popup a los 20s
-	setTimeout(
-		function() {
-			if($("#popup-oculto").is(":hidden")){
-			document.getElementById("abrir-popup-oculto").click();
-			}
-	}, 20000);
+	if (php_vars.auto_open === "1") {
+		setTimeout(
+			function() {
+				if($("#popup-oculto").is(":hidden")){
+				document.getElementById("abrir-popup-oculto").click();
+				}
+		}, php_vars.delay * 1000);
+	}
+
 	
 });

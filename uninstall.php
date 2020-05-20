@@ -5,5 +5,9 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
 }
 
 // eliminar opción previamente creada en DB
-delete_option('wcw_mobile_number');
-// delete_site_option(string $option);
+delete_option('scbw_mobile_number');
+delete_option('scbw_opening');
+delete_option('scbw_delay');
+delete_option('scbw_text1');
+delete_option('scbw_text2');
+delete_option('scbw_text3');

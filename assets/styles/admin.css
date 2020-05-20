@@ -1,16 +1,8 @@
-.wcw-mt-35{
+.scbw-mt-35{
     margin-top:35px;
 }
-.wcw-d-block{
+.scbw-d-block{
     display: block;
-}
-.tip{
-    font-style: italic;
-    margin-top: 5px;
-    color: red;
-}
-.form-group{
-    margin-bottom:20px;
 }
 #delay_field{
     display:none;
