@@ -26,3 +26,11 @@ function add_jquery() {
     wp_enqueue_script( 'jquery' );
 }    
 add_action('init', 'add_jquery');
+
+
+function load_admin_scripts() {
+    wp_enqueue_script( 'custom_wcw_admin_script', plugins_url( 'whatsapp-chat-wp/assets/js/admin.js' ));
+}
+add_action( 'admin_enqueue_scripts', 'load_admin_scripts' );
+
+

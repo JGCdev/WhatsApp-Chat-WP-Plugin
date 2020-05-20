@@ -1,6 +1,8 @@
 
 jQuery(document).ready(function($){
 
+	console.log('php vars', php_vars);
+
 	$("body").append(
 		'<div class="caja-popup">' +
 			'<div class="caja-popup-1" id="popup-oculto">' +
@@ -25,7 +27,7 @@ jQuery(document).ready(function($){
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 			window.open("https://api.whatsapp.com/send?phone="+ php_vars.number + "&text=" + texto);
 		}else{
-			window.open("https://web.whatsapp.com/send?phone=34" + php_vars.number +"&text=" + texto);
+			window.open("https://web.whatsapp.com/send?phone=" + php_vars.number +"&text=" + texto);
 		}
 	});
 
