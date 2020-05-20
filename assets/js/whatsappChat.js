@@ -1,0 +1,65 @@
+
+jQuery(document).ready(function($){
+
+	$("body").append(
+		'<div class="caja-popup">' +
+			'<div class="caja-popup-1" id="popup-oculto">' +
+				'<div class="caja-popup-abierto">' +
+					'<div class="popup-abierto-1">Estoy para ayudarte en lo que necesites. ¡Pregúnta lo que quieras!</div>' +
+					'<div class="popup-abierto-2">Hola, ¿Qué tal?</div>' +
+				'</div>' +
+				'<div class="caja-input">' +
+					'<input type="text" class="input-chat" id="inputChat" placeholder="Escribe tu mensaje...">' +
+					'<img class="enviar-chat" id="buttonChat" src="wp-content/plugins/whatsapp-chat-wp/assets/img/send-button.svg" >' +
+				'</div>' +
+			'</div>' +
+			'<div class="caja-popup-2" id="abrir-popup-oculto">' +
+				'<div class="popup-cerrado"><img class="whatsapp-icon" src="wp-content/plugins/whatsapp-chat-wp/assets/img/whatsapp.svg" > ¿Cómo puedo ayudarte?</div>' +
+			'</div>' +
+		'</div>'
+	);
+
+	console.log('phone: ', php_vars.number);
+	
+
+	$('#buttonChat').click(function(e) {  
+		var texto = $("#inputChat").val();
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			window.open("https://api.whatsapp.com/send?phone="+ php_vars.number + "&text=" + texto);
+		}else{
+			window.open("https://web.whatsapp.com/send?phone=34" + php_vars.number +"&text=" + texto);
+		}
+	});
+
+	$('#abrir-popup-oculto').toggle( 
+		/* 
+			Primer click.
+			Función que descubre un panel oculto y cambia el texto del botón.
+		*/
+		function(e){ 
+			$('#popup-oculto').slideDown();
+			$(this).html('<div style="clear:both;padding-top:15px;"></div><div class="popup-cerrado-cruz"><span class="dashicons dashicons-no"></span></div>');
+			e.preventDefault();
+		},
+	 
+		/* 
+			Segundo click.
+			Función que oculta el panel y vuelve a cambiar el texto del botón.
+		*/
+		function(e){ 
+			$('#popup-oculto').slideUp();
+			$(this).html('<div class="popup-cerrado"><img class="whatsapp-icon" src="wp-content/plugins/whatsapp-chat-wp/assets/img/whatsapp.svg" > ¿Cómo puedo ayudarte?</div>');
+			e.preventDefault();
+		}
+ 
+	);
+ 
+	// Timeout para lanzar automáticamente el popup a los 20s
+	setTimeout(
+		function() {
+			if($("#popup-oculto").is(":hidden")){
+			document.getElementById("abrir-popup-oculto").click();
+			}
+	}, 20000);
+	
+});
