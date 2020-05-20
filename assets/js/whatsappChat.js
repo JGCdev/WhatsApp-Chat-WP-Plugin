@@ -36,7 +36,7 @@ jQuery(document).ready(function($){
 		*/
 		function(e){ 
 			$('#popup-oculto').slideDown();
-			$(this).html('<div style="clear:both;padding-top:15px;"></div><div class="popup-cerrado-cruz"><span class="dashicons dashicons-no"></span></div>');
+			$(this).html('<div style="clear:both;padding-top:15px;"></div><div class="popup-cerrado-cruz"><img class="close-icon" src="wp-content/plugins/whatsapp-chat-wp/assets/img/close.svg" > </div>');
 			e.preventDefault();
 		},
 	 
