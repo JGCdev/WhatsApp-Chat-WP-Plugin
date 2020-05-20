@@ -7,14 +7,14 @@
  * Version: 1.0
  * Author: Jesús Giménez
  * Author URI: http://www.jesusgimenez.com
- * Text Domain: wcw_plugin
+ * Text Domain: scbw
  */
 
 defined('ABSPATH') or die("Not Allowed!");
 
-define('WCW_ROUTE', plugin_dir_path(__FILE__));
+define('SCBW_ROUTE', plugin_dir_path(__FILE__));
 
-include(WCW_ROUTE . '/includes/options.php');
+include(SCBW_ROUTE . '/includes/options.php');
 
 
 

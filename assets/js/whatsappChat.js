@@ -10,11 +10,11 @@ jQuery(document).ready(function($){
 				'</div>' +
 				'<div class="caja-input">' +
 					'<input type="text" class="input-chat" id="inputChat" placeholder="Escribe tu mensaje...">' +
-					'<img class="enviar-chat" id="buttonChat" src="wp-content/plugins/whatsapp-chat-wp/assets/img/send-button.svg" >' +
+					'<img class="enviar-chat" id="buttonChat" src="wp-content/plugins/simple-chat-box-wp/assets/img/send-button.svg" >' +
 				'</div>' +
 			'</div>' +
 			'<div class="caja-popup-2" id="abrir-popup-oculto">' +
-				'<div class="popup-cerrado"><img class="whatsapp-icon" src="wp-content/plugins/whatsapp-chat-wp/assets/img/whatsapp.svg" >' + php_vars.text1 + '</div>' +
+				'<div class="popup-cerrado"><img class="whatsapp-icon" src="wp-content/plugins/simple-chat-box-wp/assets/img/whatsapp.svg" >' + php_vars.text1 + '</div>' +
 			'</div>' +
 		'</div>'
 	);
@@ -36,7 +36,7 @@ jQuery(document).ready(function($){
 		*/
 		function(e){ 
 			$('#popup-oculto').slideDown();
-			$(this).html('<div style="clear:both;padding-top:15px;"></div><div class="popup-cerrado-cruz"><img class="close-icon" src="wp-content/plugins/whatsapp-chat-wp/assets/img/close.svg" > </div>');
+			$(this).html('<div style="clear:both;padding-top:15px;"></div><div class="popup-cerrado-cruz"><img class="close-icon" src="wp-content/plugins/simple-chat-box-wp/assets/img/close.svg" > </div>');
 			e.preventDefault();
 		},
 	 
@@ -46,7 +46,7 @@ jQuery(document).ready(function($){
 		*/
 		function(e){ 
 			$('#popup-oculto').slideUp();
-			$(this).html('<div class="popup-cerrado"><img class="whatsapp-icon" src="wp-content/plugins/whatsapp-chat-wp/assets/img/whatsapp.svg" > ' + php_vars.text1 + '</div>');
+			$(this).html('<div class="popup-cerrado"><img class="whatsapp-icon" src="wp-content/plugins/simple-chat-box-wp/assets/img/whatsapp.svg" > ' + php_vars.text1 + '</div>');
 			e.preventDefault();
 		}
  

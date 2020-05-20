@@ -37,7 +37,7 @@ Yes, depending on demand
 1. Login to your WordPress admin.
 2. Click on the plugins tab.
 3. Click the Add New button.
-4. Search for "WhatsApp Chat WP".
+4. Search for "Simple Chat Box WP".
 5. Look for our plugin, click "Install Now" and then "Activate".
 6. Once the plugin is installed and active, you simply need to select your phone number, and change text configurations if you need.
 7. And that's it!
