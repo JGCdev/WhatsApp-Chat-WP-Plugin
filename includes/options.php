@@ -33,4 +33,20 @@ function load_admin_scripts() {
 }
 add_action( 'admin_enqueue_scripts', 'load_admin_scripts' );
 
-
+// Iniciamos carga de script que habilita el chat
+if (get_option('wcw_mobile_number') && strlen(get_option('wcw_mobile_number')) > 0 ) {
+    function hook_add_widget() {
+        wp_enqueue_script( 'custom_wcw_script', plugins_url( 'whatsapp-chat-wp/assets/js/whatsappChat.js'));
+        
+        $dataToBePassed = array(
+            'number'           => get_option('wcw_mobile_number'),
+            'auto_open'        => get_option('wcw_opening'),
+            'delay'            => get_option('wcw_delay'),
+            'text1'            => get_option('wcw_text1'),
+            'text2'            => get_option('wcw_text2'),
+            'text3'            => get_option('wcw_text3'),
+        );
+        wp_localize_script( 'custom_wcw_script', 'php_vars', $dataToBePassed );
+    }
+    add_action( 'wp_enqueue_scripts', 'hook_add_widget' );
+}

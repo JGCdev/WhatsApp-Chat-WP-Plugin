@@ -10,10 +10,8 @@
         ) {
         $number = $_POST['wcw_mobile_number'];
         update_option('wcw_mobile_number', $number);
-        if (isset($_POST['auto_open'])) {
-            $autoOpen = $_POST['wcw_opening'];
-            update_option('wcw_opening', $autoOpen);
-        }
+        $autoOpen = $_POST['wcw_opening'];
+        update_option('wcw_opening', $autoOpen);
         $delay = $_POST['wcw_delay'];
         update_option('wcw_delay', $delay);
         $text1 = $_POST['wcw_text1'];
@@ -39,22 +37,18 @@
     $incorrectPhone = false;
 
     // Disparador para mostrar mensaje si no tenemos configurado el teléfono
-    if ($number == 'Set your whatsapp number' || strlen($number) < 3) {
-        $incorrectPhone = true;
-    }
+    if ($number == 'Set your whatsapp number' || strlen($number) < 3) { ?>
+        <div class="update-nag notice wcw-d-block">
+            <p>Rellena tu número de teléfono para activar el funcionamiento del plugin</p>
+        </div>
+    <?php } 
 ?>
+
 
 	<div class="wrap">
 		<h2><?php _e( 'WhatsApp Chat WP', 'wcw' ) ?></h2>
         Bienvenido a la página de configuración del plugin WhatsApp Chat WP
     </div>
-
-<?php if($incorrectPhone === true) : ?>
-    <div class="update-nag notice wcw-d-block">
-        <p>Rellena tu número de teléfono para activar el funcionamiento del plugin</p>
-    </div>
-<?php endif; ?>
-
 
     <div class="wrap wcw-mt-35">
         <form method="POST">
@@ -72,8 +66,8 @@
                         <td><input name="wcw_opening" type="checkbox" id="wcw_opening" value="1" <?php checked( 1,  get_option('wcw_opening') )  ?> /></td>
                     </tr>
                     <tr id="delay_field">
-                        <th><label for="wcw_delay">Delay (seconds): </label></th>
-                        <td><input type="number" name="wcw_delay" id="wcw_delay" value="<?php echo $delay; ?>"></td>
+                        <th><label for="wcw_delay">Delay (segundos): </label></th>
+                        <td><input type="number" name="wcw_delay" id="wcw_delay" value="<?php echo $delay; ?>" min="0"></td>
                     </tr>
                     <tr>
                         <th><label for="wcw_delay">Texto 1: </label></th>
@@ -94,5 +88,3 @@
         </form>
     </div>
 
-<?php
- ?>
