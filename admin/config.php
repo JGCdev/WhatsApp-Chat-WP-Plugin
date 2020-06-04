@@ -2,7 +2,7 @@
 
     if (! current_user_can ('manage_options')) wp_die (__ ("You don't have permissions to access this page."));
 
-    // Si enviamos el movil, lo actualizamos en options de la BD
+    // Si enviamos parámetros, actualizamos tabla options de la BD
     if (isset($_POST['scbw_mobile_number']) && 
         isset($_POST['scbw_delay']) &&
         isset($_POST['scbw_text1']) &&
@@ -44,7 +44,6 @@
         </div>
     <?php } 
 ?>
-
 
 	<div class="wrap">
 		<h2>Simple Chat Box WP</h2>
