@@ -53,8 +53,14 @@ Yes, depending on demand
 
 == Changelog ==
 
+= 1.0.1 (Jun 5, 2020)
+* Fix on images path
+
 = 1.0.0 (May 20, 2020) =
 * **First Release**. This is the first release of the plugin.
 
 
 == Upgrade Notice ==
+
+### 1.0.1 ###
+Important fixes on image paths

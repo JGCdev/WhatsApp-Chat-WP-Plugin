@@ -45,6 +45,7 @@ if (get_option('scbw_mobile_number') && strlen(get_option('scbw_mobile_number'))
             'text1'            => get_option('scbw_text1'),
             'text2'            => get_option('scbw_text2'),
             'text3'            => get_option('scbw_text3'),
+            'baseUrl'          => get_bloginfo("url"),
         );
         wp_localize_script( 'scbw_custom_script', 'php_vars', $dataToBePassed );
     }
